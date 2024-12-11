@@ -1,0 +1,60 @@
+<h2 mat-dialog-title>{{title}}</h2>
+
+
+<mat-dialog-content [formGroup]="updateDialogForm">
+
+    <mat-form-field >
+      <mat-select placeholder="Select Analyst"
+        formControlName="developerId">
+        <mat-option value="1">Asim Asad Mirza</mat-option>
+        <mat-option value="2">Mohammad Alsomali</mat-option>
+        <mat-option value="3">Ahmed Alhammad</mat-option>
+        <mat-option value="4">Najla AlGhofaili</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+              placeholder="Problem"
+              formControlName="description">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+              placeholder="Resolution"
+              formControlName="resolution">
+    </mat-form-field>
+
+    <mat-form-field >
+      <mat-select
+        placeholder="Select Status"
+        formControlName="status">
+        <mat-option value="Assigned">Assigned</mat-option>
+        <mat-option value="In Progress">In Progress</mat-option>
+        <mat-option value="Pending">Pending</mat-option>
+        <mat-option value="Reassigned">Reassigned</mat-option>
+        <mat-option value="Resolved">Resolved</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+   <mat-form-field>
+      <input matInput [matDatepicker]="myDatepicker"
+        placeholder="Completion Dt"
+        formControlName="completionDt">
+      <mat-datepicker-toggle matSuffix [for]="myDatepicker">
+      </mat-datepicker-toggle>
+      <mat-datepicker #myDatepicker></mat-datepicker>
+    </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button"
+            (click)="close()">
+        Close
+    </button>
+    <button class="mat-raised-button mat-primary"
+            (click)="update()">Update
+    </button>
+</mat-dialog-actions>
+

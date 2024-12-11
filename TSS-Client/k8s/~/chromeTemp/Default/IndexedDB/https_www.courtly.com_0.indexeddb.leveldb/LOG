@@ -1,0 +1,6 @@
+2024/07/29-14:49:31.236 54ec Creating DB /home/asimasad/dev/projects/under-dev/kube/deployments/URTSS-GIT-K8S/URTSS/TSS-Client/k8s/~/chromeTemp/Default/IndexedDB/https_www.courtly.com_0.indexeddb.leveldb since it was missing.
+2024/07/29-14:49:31.241 54ec Reusing MANIFEST /home/asimasad/dev/projects/under-dev/kube/deployments/URTSS-GIT-K8S/URTSS/TSS-Client/k8s/~/chromeTemp/Default/IndexedDB/https_www.courtly.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/07/29-14:49:33.612 5813 Level-0 table #5: started
+2024/07/29-14:49:33.614 5813 Level-0 table #5: 1276 bytes OK
+2024/07/29-14:49:33.615 5813 Delete type=0 #3
+2024/07/29-14:49:33.615 5813 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

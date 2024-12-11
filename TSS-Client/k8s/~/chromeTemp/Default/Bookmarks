@@ -1,0 +1,48 @@
+{
+   "checksum": "7977544bc959468553f0727c75dd01c4",
+   "roots": {
+      "bookmark_bar": {
+         "children": [  ],
+         "date_added": "13366719868896960",
+         "date_modified": "13366730895210780",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [ {
+            "children": [ {
+               "date_added": "13366730895210780",
+               "guid": "e778f161-add3-4c80-b7a2-97995ce78735",
+               "id": "5",
+               "name": "Heres How You Can Get Married in Saudi as an Expat",
+               "type": "url",
+               "url": "https://www.saudimoments.com/heres-how-you-can-get-married-in-saudi-as-an-expat-550025.html"
+            } ],
+            "date_added": "13366730914160572",
+            "date_modified": "13366730914160770",
+            "guid": "10e08258-f05e-4a31-86d6-3c896ebe2910",
+            "id": "6",
+            "name": "Merriage",
+            "type": "folder"
+         } ],
+         "date_added": "13366719868896962",
+         "date_modified": "13366730904544129",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13366719868896966",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

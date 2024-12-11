@@ -1,0 +1,46 @@
+#Configure 'Deployment' of tss database
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tss-db-deployment
+  labels:
+    app: tss-db
+    tier: database
+spec:
+  selector: # TSS Pod Should contain same labels
+    matchLabels:
+      app: tss-db
+      tier: database
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels: # Must match 'Service' and 'Deployment' selectors
+        app: tss-db
+        tier: database
+    spec:
+      containers:
+        - image: mysql:5.7
+          name: tss-db-container
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: tss-mysql-secrets
+                  key: password
+
+            - name: MYSQL_DATABASE # Setting Database Name from a 'ConfigMap'
+              valueFrom:
+                configMapKeyRef:
+                  name: tss-db-config
+                  key: dbName
+          ports:
+            - containerPort: 3306
+              name: tss-db
+          volumeMounts:
+            - name: tss-persistent-mount
+              mountPath: /var/lib/mysql #This is the path in the container on which the mounting will take place.
+      volumes:
+        - name: tss-persistent-mount
+          persistentVolumeClaim:
+            claimName: tss-persistent-storage

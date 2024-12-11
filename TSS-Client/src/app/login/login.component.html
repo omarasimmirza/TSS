@@ -1,0 +1,17 @@
+  <div fxLayoutAlign="center center" fxFlexFill class="main-div">
+  <mat-card fxFlex="15">
+    <mat-toolbar color="primary">TSS Login</mat-toolbar>
+    <form fxLayoutAlign="strech"
+          [formGroup] = "formGroup"
+          fxLayout="column" class="login-form"
+          (ngSubmit) = "prsLogin()">
+      <mat-form-field>
+        <input matInput placeholder="UserName:" formControlName="userName">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Password:"
+              formControlName="password">
+      </mat-form-field>
+      <button mat-raised-button type="submit">Login</button>
+    </form>
+  </mat-card>

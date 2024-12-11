@@ -1,0 +1,50 @@
+<table mat-table [dataSource]=dataSource>
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Analyst </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> Problem  </th>
+    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="resolution">
+    <th mat-header-cell *matHeaderCellDef> Resolution </th>
+    <td mat-cell *matCellDef="let element"> {{element.resolution}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="completionDt">
+    <th mat-header-cell *matHeaderCellDef> Completion Date </th>
+    <td mat-cell *matCellDef="let element"> {{element.completionDt | date}} </td>
+  </ng-container>
+  <ng-container matColumnDef="update">
+      <th mat-header-cell *matHeaderCellDef> Update Ticket </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary" (click)="updateTicketDialog(element)">
+            <mat-icon class="mat-18">system_update</mat-icon>
+        </button>
+      </td>
+  </ng-container> -->
+  <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> Delete Ticket </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="warn" (click)="deleteTicket(element.ticketId)">
+         <mat-icon class="mat-18">delete</mat-icon>
+        </button>
+      </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-card class="justify-right">
+  <button mat-raised-button
+    color="primary"
+    (click)="saveTicketDialog()"> New Ticket
+  </button>
+</mat-card>

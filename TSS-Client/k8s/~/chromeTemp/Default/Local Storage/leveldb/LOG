@@ -1,0 +1,27 @@
+2024/07/29-12:44:28.901 3 Reusing MANIFEST /home/asimasad/dev/projects/under-dev/kube/deployments/URTSS-GIT-K8S/URTSS/TSS-Client/k8s/~/chromeTemp/Default/Local Storage/leveldb/MANIFEST-000001
+2024/07/29-12:44:28.902 3 Recovering log #8
+2024/07/29-12:44:28.903 3 Reusing old log /home/asimasad/dev/projects/under-dev/kube/deployments/URTSS-GIT-K8S/URTSS/TSS-Client/k8s/~/chromeTemp/Default/Local Storage/leveldb/000008.log 
+2024/07/29-14:51:26.721 12 Level-0 table #12: started
+2024/07/29-14:51:26.726 12 Level-0 table #12: 33234 bytes OK
+2024/07/29-14:51:26.731 12 Delete type=0 #8
+2024/07/29-14:57:02.803 17 Level-0 table #14: started
+2024/07/29-14:57:02.813 17 Level-0 table #14: 19586 bytes OK
+2024/07/29-14:57:02.819 17 Delete type=0 #11
+2024/07/29-15:03:53.121 17 Level-0 table #16: started
+2024/07/29-15:03:53.131 17 Level-0 table #16: 22469 bytes OK
+2024/07/29-15:03:53.136 17 Delete type=0 #13
+2024/07/29-15:03:53.137 17 Compacting 4@0 + 1@1 files
+2024/07/29-15:03:53.146 17 Generated table #17@0: 205 keys, 69423 bytes
+2024/07/29-15:03:53.147 17 Compacted 4@0 + 1@1 files => 69423 bytes
+2024/07/29-15:03:53.159 17 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/07/29-15:03:53.162 17 Delete type=2 #9
+2024/07/29-15:03:53.162 17 Delete type=2 #16
+2024/07/29-15:03:53.162 17 Delete type=2 #12
+2024/07/29-15:03:53.163 17 Delete type=2 #7
+2024/07/29-15:03:53.163 17 Delete type=2 #14
+2024/07/29-15:46:12.331 22 Level-0 table #19: started
+2024/07/29-15:46:12.333 22 Level-0 table #19: 38524 bytes OK
+2024/07/29-15:46:12.336 22 Delete type=0 #15
+2024/07/29-15:56:16.767 2b Level-0 table #21: started
+2024/07/29-15:56:16.777 2b Level-0 table #21: 27553 bytes OK
+2024/07/29-15:56:16.783 2b Delete type=0 #18

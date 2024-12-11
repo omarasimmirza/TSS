@@ -1,0 +1,21 @@
+
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <!-- <button mat-icon-button>
+        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+      </button> -->
+        <h1>TSS</h1>
+      <span class="menu-spacer"></span>
+      <div>
+        <a mat-button [routerLink]="'/wrsTickets'"> WRS </a>
+        <a mat-button [routerLink]="'/urbpsTickets'"> URBPS </a>
+        <a mat-button [routerLink]="'/vendorTickets'"> Vendor Apps </a>
+        <a mat-button [routerLink]="'/allTickets'"> All </a>
+        <a mat-button [routerLink]="'/login'"> Logout </a>
+      </div>
+    </mat-toolbar-row>
+  <mat-toolbar-row>
+      <span style="font-size: 11px;">TSS - Technical Support System</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>

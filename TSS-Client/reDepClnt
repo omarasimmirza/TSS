@@ -1,0 +1,33 @@
+#delete client deployment
+kubectl delete deployment tss-clnt-app
+sleep 3
+
+#delete client service
+kubectl delete service tss-clnt-service
+sleep 3
+
+#delete client image
+docker image rm -f urtssclientimg:1.0
+sleep 3
+
+#prune untagged image
+docker rmi urtssclientimg:1.0
+sleep 3
+
+
+#build project to propagate changes
+#compiles new angular from source
+#this will populate /dist/tss
+ng build
+sleep 3
+
+#build client image
+docker build -t urtssclientimg:1.0 .
+sleep 10
+
+
+#deploy client image and service
+kubectl create -f /home/asimasad/dev/projects/under-dev/kube/deployments/URTSS-GIT-K8S/URTSS/TSS-Client/k8s/tss-clnt-deployment.yaml
+
+#get services
+kubectl get svc

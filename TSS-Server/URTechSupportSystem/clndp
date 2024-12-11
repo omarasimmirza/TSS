@@ -1,0 +1,14 @@
+#!/bin/bash
+kubectl delete deployment tss-srvr-pod
+sleep 3
+kubectl delete svc tss-srvr-svc
+sleep 3
+docker image rm -f urtsssrvrimg:1.0
+sleep 3
+mvn clean verify spring-boot:run -DskipTests
+docker build -t urtsssrvrimg:1.0 .
+sleep 3
+kubectl apply -f ./k8s/tss-srvr-deployment.yaml
+sleep 3
+kubectl get svc
+

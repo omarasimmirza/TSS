@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>{{description}}</h2>
+
+<mat-dialog-content [formGroup]="dialogForm" >
+
+  <mat-form-field >
+    <mat-select placeholder="Select Analyst" formControlName="developerId">
+      <mat-option value="1">Asim Asad Mirza</mat-option>
+      <mat-option value="2">Mohammad Alsomali</mat-option>
+      <mat-option value="3">Ahmed Alhammad</mat-option>
+      <mat-option value="4">Najla Alghofaili</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Problem" formControlName="description">
+  </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button"(click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
+</mat-dialog-actions>

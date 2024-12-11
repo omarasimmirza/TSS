@@ -1,0 +1,58 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-initdb-config
+data:
+  init-db.sql: |
+    CREATE DATABASE IF NOT EXISTS URSTechSupport;
+    USE URSTechSupport;
+
+    DROP TABLE IF EXISTS credentials;
+    DROP TABLE IF EXISTS team;
+    DROP TABLE IF EXISTS ticket;
+
+    CREATE TABLE IF NOT EXISTS credentials (
+       credId  INT NOT NULL AUTO_INCREMENT,
+       userid VARCHAR(20) NOT NULL, 
+       password VARCHAR(10) NOT NULL, 
+       status VARCHAR(10) NOT NULL,
+       PRIMARY KEY (credId)
+    );
+    CREATE TABLE IF NOT EXISTS team (
+       teamId   INT NOT NULL AUTO_INCREMENT,
+       userId VARCHAR(20) NOT NULL, 
+       name VARCHAR(20) NOT NULL,
+       PRIMARY KEY (teamId)
+    );
+
+    CREATE TABLE IF NOT EXISTS ticket (
+       ticketId INT NOT NULL AUTO_INCREMENT,
+       developerId INT NULL,
+       description VARCHAR(100) NOT NULL,
+       status VARCHAR(20) NOT NULL,
+       resolution VARCHAR(100) NULL,
+       startDt DATE,
+       completionDt DATE,
+       PRIMARY KEY (ticketId)
+    );
+
+    INSERT INTO credentials (userId, password, status) VALUES ('amirza', 'am123', 'active');
+    INSERT INTO credentials (userId, password, status) VALUES ('malsomali', 'ma123', 'active');
+    INSERT INTO credentials (userId, password, status) VALUES ('nalghofaili', 'na123', 'active');
+    INSERT INTO credentials (userId, password, status) VALUES ('aalhammad', 'aa123', 'active');
+
+    INSERT INTO team (userId, name) VALUES ('amirza', 'Asim Asad Mirza');
+    INSERT INTO team (userId, name) VALUES ('malsomali', 'Mohammad Alsomali');
+    INSERT INTO team (userId, name) VALUES ('aalhammad', 'Ahmed Alhammad');
+    INSERT INTO team (userId, name) VALUES ('nalghofaili', 'Najla Alghofaili');
+
+    INSERT INTO ticket (description, status, resolution, startDt, completionDt, developerId)
+        VALUES ('User is not able to login', 'Resolved', 'password was expired', NOW(), NOW(), 1);
+    INSERT INTO ticket (description, status, resolution, startDt, completionDt, developerId) 
+        VALUES ('Wireline interface not updating properly', 'In Progress', 'Not Resolved', NOW(), NULL, 2);
+    INSERT INTO ticket (description, status, resolution, startDt, completionDt, developerId) 
+        VALUES ('Stimulation search is not working', 'Pending', 'Waiting user response', NOW(), NULL, 3);
+    INSERT INTO ticket (description, status, resolution, startDt, completionDt, developerId) 
+        VALUES ('Data Loader crashing', 'Assigned', 'In Progress', NOW(), NULL, 2);
+    INSERT INTO ticket (description, status, resolution, startDt, completionDt, developerId) 
+        VALUES ('Not able to delete steps', 'Resolved', 'key value was not send for deletion', NOW(), NOW(), 4);

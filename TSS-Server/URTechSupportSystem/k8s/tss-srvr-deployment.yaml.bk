@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tss-srvr-pod
+spec:
+  selector:
+    matchLabels:
+      app: tss-v1
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: tss-v1
+    spec:
+      #terminationGracePeriodSeconds: 30 for updating image not working
+      containers:
+        - name: tss-srvr-container 
+          image: urtsssrvrimg:1.0 #image must have been  generated before running this script
+          #imagePullPolicy: Always for updating image not working
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+          env:   # Setting Environmental Variables
+            - name: DB_HOST   # Setting Database host address
+              valueFrom:
+                configMapKeyRef:
+                  name: tss-db-config
+                  key: host
+            - name: DB_NAME   # Setting Database host address
+              valueFrom:
+                configMapKeyRef:
+                  name: tss-db-config
+                  key: dbName
+            - name: DB_USERNAME  # Setting Database name
+              valueFrom:
+                secretKeyRef:
+                  name: tss-mysql-secrets
+                  key: username
+            - name: DB_PASSWORD  # Setting Database username
+              valueFrom:
+                secretKeyRef:
+                  name: tss-mysql-secrets
+                  key: password
+
+# This seperator --- below is MANDATORY!!!
+
+---
+
+# Define a 'Service' To Expose the application
+apiVersion: v1
+kind: Service
+metadata:
+  name: tss-srvr-svc
+spec:
+  ports:
+    - protocol: "TCP"
+      port: 8080    # Port inside the cluster
+      targetPort:   # Port exposed to the outside
+  selector:
+    app: tss-v1
+  type: NodePort

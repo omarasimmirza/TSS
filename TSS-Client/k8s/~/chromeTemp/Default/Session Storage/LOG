@@ -1,0 +1,9 @@
+2024/07/29-12:44:29.055 3 Reusing MANIFEST /home/asimasad/dev/projects/under-dev/kube/deployments/URTSS-GIT-K8S/URTSS/TSS-Client/k8s/~/chromeTemp/Default/Session Storage/MANIFEST-000001
+2024/07/29-12:44:29.056 3 Recovering log #3
+2024/07/29-12:44:29.057 3 Reusing old log /home/asimasad/dev/projects/under-dev/kube/deployments/URTSS-GIT-K8S/URTSS/TSS-Client/k8s/~/chromeTemp/Default/Session Storage/000003.log 
+2024/07/29-12:44:49.433 3 Level-0 table #5: started
+2024/07/29-12:44:49.443 3 Level-0 table #5: 19849 bytes OK
+2024/07/29-12:44:49.448 3 Delete type=0 #3
+2024/07/29-15:03:55.614 1e Level-0 table #7: started
+2024/07/29-15:03:55.625 1e Level-0 table #7: 20974 bytes OK
+2024/07/29-15:03:55.631 1e Delete type=0 #4
